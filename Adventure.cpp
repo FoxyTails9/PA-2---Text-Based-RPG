@@ -1,48 +1,6 @@
 #include "Adventure.h"
 #include <iostream>
 
-// File-local helper: prints text word-wrapped so no line is longer than
-// WRAP_WIDTH. A line that already fits is printed exactly as it is.
-// firstPrefix starts the first line; indent starts every wrapped line.
-namespace {
-const int WRAP_WIDTH = 80;
-
-void printWrapped(const std::string& text, const std::string& firstPrefix, const std::string& indent) {
-    if ((int)(firstPrefix.size() + text.size()) <= WRAP_WIDTH) {
-        std::cout << firstPrefix << text << std::endl;
-        return;
-    }
-    std::string line = firstPrefix;
-    bool lineHasWord = false;
-    size_t pos = 0;
-    while (pos < text.size()) {
-        while (pos < text.size() && text[pos] == ' ') {
-            pos++;
-        }
-        if (pos >= text.size()) {
-            break;
-        }
-        size_t end = text.find(' ', pos);
-        if (end == std::string::npos) {
-            end = text.size();
-        }
-        std::string word = text.substr(pos, end - pos);
-        pos = end;
-        if (lineHasWord && (int)(line.size() + 1 + word.size()) > WRAP_WIDTH) {
-            std::cout << line << std::endl;
-            line = indent;
-            lineHasWord = false;
-        }
-        if (lineHasWord) {
-            line += " ";
-        }
-        line += word;
-        lineHasWord = true;
-    }
-    std::cout << line << std::endl;
-}
-}
-
 // ===================== GIVEN HELPERS (do not change) =====================
 
 // Reads the next line that is not blank.
@@ -247,7 +205,7 @@ void Adventure::play() {
 
         // 2. Header and story text.
         std::cout << std::string(40, '-') << std::endl;
-        printWrapped(moment->getText(), "", "");
+        std::cout << moment->getText() << std::endl;
 
         // 3. Item.
         if (moment->hasItem()) {
@@ -318,9 +276,8 @@ void Adventure::printEndings(Scene<Moment>* scene, const std::string& path) cons
         return;
     }
     if (scene->isEnding()) {
-        printWrapped(scene->getData()->getText(),
-                     "Path " + (path.empty() ? std::string("(start)") : path) + ": ", "    ");
-         std::cout << std::endl;
+        std::cout << "Path " << (path.empty() ? "(start)" : path) << ": "
+                  << scene->getData()->getText() << std::endl;
         return;
     }
     for (int i = 0; i < scene->getNumChoices(); i++) {
