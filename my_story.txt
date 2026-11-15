@@ -1,0 +1,102 @@
+START_HP 10
+SCENE HAUNTED MANSION. In hopes of striking it rich, you journey to an abandoned mansion in a secluded area, rumored to be full of treasure... yet no one has ever been able to prove it. You enter as the night crawls in, and you are faced with three areas to explore.
+HP 0
+LOOT 0
+ITEM none
+CHOICES 3
+LABEL Explore the annex
+  SCENE You find yourself at the rear of the mansion, with two main paths ahead.
+  HP 0
+  LOOT 2
+  ITEM none
+  CHOICES 2
+  LABEL Go into the staff quarters
+    SCENE You find little to no belongings in the staff quarters and manage to escape the mansion.
+    HP 0
+    LOOT 1
+    ITEM none
+    CHOICES 0
+  LABEL Go to the main kitchen
+    SCENE You see an empty kitchen. While it is empty of people and food, you find plenty of untarnished silver and other kitchenware that looks like it costs a fortune.
+    HP 0
+    LOOT 4
+    ITEM Silver Cutlery
+    CHOICES 1
+    LABEL Look into the storage room attached at the back
+      SCENE A strong stench stops you. You pull back a little and take out your torch to light up the storeroom... only to see the cause of the stench: a rotting pile of kitchen staff that seems to have become one single mass. An eerie feeling washes over you, and you choose to turn back and leave the mansion immediately. The mansion has been vacant for so long that there should not be any bodies left to rot...
+      HP -4
+      LOOT 0
+      ITEM none
+      CHOICES 0
+LABEL Explore the east wing
+  SCENE As you continue walking forward into the east wing, you are faced with two paths.
+  HP 0
+  LOOT 3
+  ITEM none
+  CHOICES 2
+  LABEL Enter the library
+    SCENE You walk into the vast library, books filling your horizon. In the middle of it all sits a perfectly placed book, seemingly an heirloom of the family that owns this mansion.
+    HP 0
+    LOOT 2
+    ITEM none
+    CHOICES 2
+    LABEL Open the book and read it
+      SCENE Smoke starts to fill the room and a shadowy entity begins to speak: "You who have opened me must suffer the same fate as this family, unless you answer my riddle correctly. What is easier done than said?"
+      HP -2
+      LOOT 0
+      ITEM Family Heirloom Book
+      CHOICES 2
+      LABEL Freeze in shock and stay silent
+        SCENE "I will take that as an answer... Since you have answered correctly, you may enter the secret study. Would you like to?"
+        HP 0
+        LOOT 0
+        ITEM none
+        CHOICES 1
+        LABEL "Yes"
+          SCENE You step into the secret study and find a shiny new trinket that looks like it would sell for a small fortune.
+          HP 0
+          LOOT 5
+          ITEM Shiny Trinket
+          CHOICES 0
+      LABEL Shout "WHAT THE-"
+        SCENE "Wrong answer..." The entity starts wrapping its foggy arms around you and swallows you whole. You cannot even let out a sound as it tightens around your head.
+        HP -10
+        LOOT 0
+        ITEM none
+        CHOICES 0
+    LABEL Don't touch it or even breathe near it
+      SCENE You start picking up books and tools that look expensive, and escape the mansion.
+      HP 0
+      LOOT 4
+      ITEM Antique Tools
+      CHOICES 0
+  LABEL Enter the ballroom
+    SCENE You see a big ballroom adorned with fine furniture and musical instruments along the walls, one of them a grand piano. A key is pressed and someone begins to hum. You feel an eerie presence, and then you hear the voice coming from right above you...
+    HP -1
+    LOOT 4
+    ITEM none
+    CHOICES 1
+    LABEL Look up
+      SCENE You see the lady of the house hanging from the ceiling, smiling and humming. Suddenly you are grabbed by someone, and before you can get a look at their face you hear: "Surely you would indulge my wife by playing the piano... if not, I am afraid you will have to be dealt with." Fear fills you and you run, only to be dragged back...
+      HP -10
+      LOOT 0
+      ITEM none
+      CHOICES 0
+LABEL Explore the west wing
+  SCENE You find yourself in a long stretch of corridor lined with what seem to be the bedrooms of the mansion's family. At the end of the hall you spot the main bedroom.
+  HP 0
+  LOOT 1
+  ITEM none
+  CHOICES 1
+  LABEL Go into the main bedroom
+    SCENE The door creaks as you enter and you hear a shuffle. You look around but cannot find the cause of the noise. You do see the endless treasures of the family lying everywhere: gold on the bed, and on the bedstand a strange amulet that looks expensive. You think of how pawning it would feed and clothe you for the rest of your life. As you take the amulet, it begins to hum an eerie tune and tears at your soul, trying to trap it inside. Eternity is a far too cruel fate, isn't it?
+    HP -6
+    LOOT 8
+    ITEM Eerie Amulet
+    CHOICES 1
+    LABEL Tear free and make your escape alive
+      SCENE You wrench yourself free and escape the mansion alive, with riches far beyond what the mind can imagine. You soon become the richest person alive.
+      HP 0
+      LOOT 6
+      ITEM Chest of Gold
+      CHOICES 0
