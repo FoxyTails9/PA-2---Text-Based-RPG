@@ -12,7 +12,6 @@ class StoryTree {
 private:
     Scene<T>* root_;
 
-    // TODO 6: how many scenes are in the story that starts at scene?
     // An empty story has 0 scenes.
     int countScenes(Scene<T>* scene) const {
         if (scene == nullptr) {
@@ -25,7 +24,6 @@ private:
         return total;
     }
 
-    // TODO 7: how many endings are in the story that starts at scene?
     int countEndings(Scene<T>* scene) const {
         if (scene == nullptr) {
             return 0;
@@ -40,7 +38,6 @@ private:
         return total;
     }
 
-    // TODO 8: the most choices a player can make on the way to an ending,
     // starting at scene. A single ending scene has height 0.
     // An empty story has height -1.
     int height(Scene<T>* scene) const {
@@ -77,7 +74,6 @@ public:
         return root_ == nullptr;
     }
 
-    // TODO 9: free every scene in the story and leave the tree empty.
     // Hint: what does deleting a Scene already do for you?
     void clear() {
         delete root_;     // ~Scene frees everything below it

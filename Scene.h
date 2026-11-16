@@ -18,10 +18,6 @@ public:
     static const int MAX_CHOICES = 3;
 
     Scene(T* data, int numChoices) : data_(data), choices_(nullptr), numChoices_(numChoices) {
-        // TODO 1:
-        // A scene with numChoices_ choices needs exactly numChoices_ slots.
-        // An ending (0 choices) needs no slots at all.
-        // Every slot must start out empty.
         if (numChoices_ > 0) {
             choices_ = new Scene<T>*[numChoices_];
             for (int i = 0; i < numChoices_; i++) {
@@ -33,11 +29,6 @@ public:
     }
 
     ~Scene() {
-        // TODO 2:
-        // Free everything this scene owns.
-        // Think about what it owns, and what each slot points to.
-        // Order: the scenes the slots point to first (we need the array to
-        // reach them), then the array itself, then the payload.
         for (int i = 0; i < numChoices_; i++) {
             delete choices_[i];   // deleting nullptr is safe
         }
@@ -53,12 +44,10 @@ public:
         return numChoices_;
     }
 
-    // TODO 3: true if this scene is an ending.
     bool isEnding() const {
         return numChoices_ == 0;
     }
 
-    // TODO 4: the scene behind slot index.
     // Return nullptr if index is not a real slot.
     Scene<T>* getChoice(int index) const {
         if (index < 0 || index >= numChoices_) {
@@ -67,7 +56,6 @@ public:
         return choices_[index];
     }
 
-    // TODO 5: put next into slot index.
     // Do nothing if index is not a real slot.
     void setChoice(int index, Scene<T>* next) {
         if (index < 0 || index >= numChoices_) {
